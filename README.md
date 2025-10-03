@@ -1,73 +1,69 @@
-🏥 MedTech Surgical Planning Web Application
+# 🏥 MedTech Surgical Planning Web Application
+
 A full-stack web application for simulating medical image processing for surgical planning. This project demonstrates a complete full-stack workflow with React frontend, Node.js backend, and Python image processing server.
 
-🎯 Live Demo
-Frontend: https://iamgaurav07.github.io/medtech-app/
+## 🎯 Live Demo
 
-Note: For full functionality, the backend and Python servers need to be running locally as described in the setup instructions below.
+**Frontend:** [https://iamgaurav07.github.io/medtech-app/](https://iamgaurav07.github.io/medtech-app/)
 
-📋 Features
-✅ Upload CT Scan Images - Support for JPG, PNG formats
+> **Note:** For full functionality, the backend and Python servers need to be running locally as described in the setup instructions below.
 
-✅ Dual-Phase Processing - Arterial (contrast enhancement) and Venous (smoothing) phases
+---
 
-✅ Real-time Processing - Backend image processing with Python OpenCV
+## 📋 Features
 
-✅ Side-by-Side Comparison - Professional image comparison interface
+- ✅ **Upload CT Scan Images** - Support for JPG, PNG formats
+- ✅ **Dual-Phase Processing** - Arterial (contrast enhancement) and Venous (smoothing) phases
+- ✅ **Real-time Processing** - Backend image processing with Python OpenCV
+- ✅ **Side-by-Side Comparison** - Professional image comparison interface
+- ✅ **Medical-Grade Processing** - Subtle, professional image enhancements
+- ✅ **Responsive Design** - Works on desktop and mobile devices
+- ✅ **Type Safety** - Full TypeScript implementation
 
-✅ Medical-Grade Processing - Subtle, professional image enhancements
+---
 
-✅ Responsive Design - Works on desktop and mobile devices
+## 🏗️ System Architecture
 
-✅ Type Safety - Full TypeScript implementation
-
-🏗️ System Architecture
-text
+```
 Frontend (React + TypeScript)
         ↓
 Backend API (Node.js + Express + TypeScript)
         ↓
 Python Image Processing (Flask + OpenCV)
-🛠️ Technology Stack
-Frontend
-React 18 - UI framework with hooks
+```
 
-TypeScript - Type safety and better development experience
+---
 
-Vite - Fast build tool and dev server
+## 🛠️ Technology Stack
 
-Tailwind CSS - Utility-first CSS framework
+### Frontend
+- **React 18** - UI framework with hooks
+- **TypeScript** - Type safety and better development experience
+- **Vite** - Fast build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+- **Lucide React** - Beautiful icons
+- **Axios** - HTTP client for API calls
 
-Lucide React - Beautiful icons
+### Backend
+- **Node.js** - Runtime environment
+- **Express.js** - Web framework
+- **TypeScript** - Type safety
+- **Multer** - File upload handling
+- **CORS** - Cross-origin resource sharing
+- **Axios** - HTTP client for Python server communication
 
-Axios - HTTP client for API calls
+### Image Processing
+- **Python 3.9+** - Programming language
+- **Flask** - Web framework
+- **OpenCV** - Computer vision and image processing
+- **Pillow** - Image manipulation
+- **NumPy** - Numerical computing
 
-Backend
-Node.js - Runtime environment
+---
 
-Express.js - Web framework
+## 📁 Project Structure
 
-TypeScript - Type safety
-
-Multer - File upload handling
-
-CORS - Cross-origin resource sharing
-
-Axios - HTTP client for Python server communication
-
-Image Processing
-Python 3.9+ - Programming language
-
-Flask - Web framework
-
-OpenCV - Computer vision and image processing
-
-Pillow - Image manipulation
-
-NumPy - Numerical computing
-
-📁 Project Structure
-text
+```
 medtech-app/
 ├── 📁 frontend/                 # React TypeScript Application
 │   ├── 📁 public/              # Static files
@@ -105,21 +101,31 @@ medtech-app/
 │   └── README.md               # Python server documentation
 │
 └── 📄 README.md                # This file
-🚀 Quick Start (Local Development)
-Prerequisites
-Node.js 18+ Download
+```
 
-Python 3.9+ Download
+---
 
-Git Download
+## 🚀 Quick Start (Local Development)
 
-Step 1: Clone and Setup
-bash
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- [Node.js 18+](https://nodejs.org/)
+- [Python 3.9+](https://www.python.org/)
+- [Git](https://git-scm.com/)
+
+### Step 1: Clone and Setup
+
+```bash
 # Clone the repository
 git clone https://github.com/iamgaurav07/medtech-app.git
 cd medtech-app
-Step 2: Backend Setup (Node.js)
-bash
+```
+
+### Step 2: Backend Setup (Node.js)
+
+```bash
 # Navigate to backend directory
 cd backend
 
@@ -136,10 +142,13 @@ MAX_FILE_SIZE=10485760" > .env
 
 # Start development server
 npm run dev
-Backend will run on: http://localhost:5000
+```
 
-Step 3: Python Server Setup
-bash
+**Backend will run on:** `http://localhost:5000`
+
+### Step 3: Python Server Setup
+
+```bash
 # Navigate to python-server directory
 cd python-server
 
@@ -157,10 +166,13 @@ pip install -r requirements.txt
 
 # Start Python server
 python app.py
-Python server will run on: http://localhost:8000
+```
 
-Step 4: Frontend Setup (React)
-bash
+**Python server will run on:** `http://localhost:8000`
+
+### Step 4: Frontend Setup (React)
+
+```bash
 # Navigate to frontend directory
 cd frontend
 
@@ -169,134 +181,156 @@ npm install
 
 # Start development server
 npm run dev
-Frontend will run on: http://localhost:3000
+```
 
-⚙️ Configuration
-Backend Environment Variables
-Create backend/.env file:
+**Frontend will run on:** `http://localhost:3000`
 
-env
+---
+
+## ⚙️ Configuration
+
+### Backend Environment Variables
+
+Create `backend/.env` file:
+
+```env
 PORT=5000
 NODE_ENV=development
 PYTHON_SERVER_URL=http://localhost:8000
 CORS_ORIGIN=http://localhost:3000
 UPLOAD_DIR=uploads
 MAX_FILE_SIZE=10485760
-Frontend Environment Variables
-Create frontend/.env file:
+```
 
-env
+### Frontend Environment Variables
+
+Create `frontend/.env` file:
+
+```env
 VITE_API_BASE_URL=http://localhost:5000/api
 VITE_PYTHON_SERVER_URL=http://localhost:8000
 VITE_UPLOAD_MAX_SIZE=10485760
 VITE_APP_NAME=MedTech Surgical Planning
-🎯 Image Processing Details
-Arterial Phase Processing
-Contrast Enhancement - Subtle contrast increase using CLAHE (Contrast Limited Adaptive Histogram Equalization)
+```
 
-Brightness Adjustment - Mild brightness enhancement
+---
 
-Medical-Grade - Professional, non-destructive adjustments suitable for medical imaging
+## 🎯 Image Processing Details
 
-Venous Phase Processing
-Gaussian Smoothing - Subtle blurring effect with adaptive kernel size
+### Arterial Phase Processing
+- **Contrast Enhancement** - Subtle contrast increase using CLAHE (Contrast Limited Adaptive Histogram Equalization)
+- **Brightness Adjustment** - Mild brightness enhancement
+- **Medical-Grade** - Professional, non-destructive adjustments suitable for medical imaging
 
-Noise Reduction - Bilateral filtering to preserve edges
+### Venous Phase Processing
+- **Gaussian Smoothing** - Subtle blurring effect with adaptive kernel size
+- **Noise Reduction** - Bilateral filtering to preserve edges
+- **Contrast Adjustment** - Mild contrast reduction for venous appearance
 
-Contrast Adjustment - Mild contrast reduction for venous appearance
+---
 
-🔧 API Documentation
-Backend Endpoints
-Method	Endpoint	Description
-POST	/api/process-image	Process uploaded image with selected phase
-GET	/api/health	Backend server health check
-GET	/api/python-status	Python server connection status
-Python Server Endpoints
-Method	Endpoint	Description
-POST	/process	Process image (for Node.js backend)
-POST	/process-base64	Process image with base64 response (direct frontend)
-GET	/health	Python server health check
-GET	/uploads/<filename>	Serve processed images
-🐛 Troubleshooting
-Common Issues
-Port Already in Use
+## 🔧 API Documentation
 
-bash
+### Backend Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/api/process-image` | Process uploaded image with selected phase |
+| `GET` | `/api/health` | Backend server health check |
+| `GET` | `/api/python-status` | Python server connection status |
+
+### Python Server Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/process` | Process image (for Node.js backend) |
+| `POST` | `/process-base64` | Process image with base64 response (direct frontend) |
+| `GET` | `/health` | Python server health check |
+| `GET` | `/uploads/<filename>` | Serve processed images |
+
+---
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+#### Port Already in Use
+
+```bash
 # Find process using port
 lsof -i :3000  # or 5000, 8000
+
 # Kill process
 kill -9 <PID>
-Python Dependencies Issues
+```
 
-bash
+#### Python Dependencies Issues
+
+```bash
 # Clear cache and reinstall
 pip cache purge
 pip install -r requirements.txt --force-reinstall
-Node.js Dependencies Issues
+```
 
-bash
+#### Node.js Dependencies Issues
+
+```bash
 # Clear node_modules and reinstall
 rm -rf node_modules package-lock.json
 npm install
-CORS Errors
+```
 
-Ensure all servers are running
+#### CORS Errors
 
-Check environment variables for correct URLs
+- Ensure all servers are running
+- Check environment variables for correct URLs
+- Verify CORS configuration in backend
 
-Verify CORS configuration in backend
+### Debug Mode
 
-Debug Mode
 Enable debug logging by setting:
 
-env
+```env
 NODE_ENV=development
-🎮 How to Use
-Start all three servers (Frontend, Backend, Python)
+```
 
-Open frontend at http://localhost:3000
+---
 
-Upload a medical image (JPG/PNG format)
+## 🎮 How to Use
 
-Select processing phase:
+1. **Start all three servers** (Frontend, Backend, Python)
+2. **Open frontend** at `http://localhost:3000`
+3. **Upload a medical image** (JPG/PNG format)
+4. **Select processing phase:**
+   - **Arterial:** Increased contrast simulation
+   - **Venous:** Gaussian smoothing simulation
+5. **Click "Process Image"** to see results
+6. **Compare images** side-by-side in the results section
 
-Arterial: Increased contrast simulation
+---
 
-Venous: Gaussian smoothing simulation
+## 📝 Development Notes
 
-Click "Process Image" to see results
+### For Developers
+- All servers support hot reloading during development
+- TypeScript provides type safety across the entire stack
+- Error handling is implemented at all levels
+- Comprehensive logging for debugging
 
-Compare images side-by-side in the results section
+### Image Processing Notes
+- All image processing algorithms are optimized for medical imaging
+- Processing parameters are configurable for different imaging modalities
+- Output images maintain original resolution and bit depth
 
-📝 Development Notes
-For Developers
-All servers support hot reloading during development
+---
 
-TypeScript provides type safety across the entire stack
+## 📄 License
 
-Error handling is implemented at all levels
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Comprehensive logging for debugging
+---
 
-Image Processing Notes
-Processing is simulated for educational purposes
+## 👨‍💻 Author
 
-No clinical significance - for demonstration only
-
-Uses professional medical imaging techniques
-
-Output quality is suitable for surgical planning simulations
-
-🤝 Contributing
-Fork the repository
-
-Create a feature branch (git checkout -b feature/amazing-feature)
-
-Commit your changes (git commit -m 'Add some amazing feature')
-
-Push to the branch (git push origin feature/amazing-feature)
-
-Open a Pull Request
-
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+**Gaurav**
+- GitHub: [@iamgaurav07](https://github.com/iamgaurav07)
